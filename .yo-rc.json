@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "org.gracehanin.newcomer",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.1.2",
+    "applicationType": "monolith",
+    "baseName": "newcomer",
+    "packageName": "org.gracehanin.newcomer",
+    "packageFolder": "org/gracehanin/newcomer",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mssql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MjQ0YzY1MjZlZWJlYWRmN2YxYWY5YTM0ZWNiZDYyNDQ2ZTI1YzljMjcwZGNiOTRhYzVhOTk4MGQ4ZWRlOWUyOThhYmM3YWM3YTEwMjg5MDc5ODI5OGUxM2ExYWYwZWFiNDMxNjI5YTI4M2NiYWM3MjIxMDE5YTIzZmEyMTIxZmU=",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "react",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "ko"
+    ]
+  }
+}
