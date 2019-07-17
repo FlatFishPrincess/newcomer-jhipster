@@ -1,20 +1,22 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Link, RouteComponentProps } from 'react-router-dom';
-import { Button, Row, Col, Label } from 'reactstrap';
-import { AvFeedback, AvForm, AvGroup, AvInput, AvField } from 'availity-reactstrap-validation';
-// tslint:disable-next-line:no-unused-variable
-import { Translate, translate, ICrudGetAction, ICrudGetAllAction, ICrudPutAction } from 'react-jhipster';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IRootState } from 'app/shared/reducers';
-
-import { ICity } from 'app/shared/model/city.model';
 import { getEntities as getCities } from 'app/entities/city/city.reducer';
-import { getEntity, updateEntity, createEntity, reset } from './new-comer.reducer';
+import { ICity } from 'app/shared/model/city.model';
 import { INewComer } from 'app/shared/model/new-comer.model';
+import { IRootState } from 'app/shared/reducers';
 // tslint:disable-next-line:no-unused-variable
 import { convertDateTimeFromServer, convertDateTimeToServer } from 'app/shared/util/date-utils';
 import { mapIdList } from 'app/shared/util/entity-utils';
+import { AvFeedback, AvField, AvForm, AvGroup, AvInput } from 'availity-reactstrap-validation';
+import React from 'react';
+// tslint:disable-next-line:no-unused-variable
+import { ICrudGetAction, ICrudGetAllAction, ICrudPutAction, Translate, translate } from 'react-jhipster';
+import { connect } from 'react-redux';
+import { Link, RouteComponentProps } from 'react-router-dom';
+import { Button, Col, Label, Row } from 'reactstrap';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { TextBoxComponent } from '@syncfusion/ej2-react-inputs';
+
+import { createEntity, getEntity, reset, updateEntity } from './new-comer.reducer';
 
 export interface INewComerUpdateProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
 
@@ -168,10 +170,11 @@ export class NewComerUpdate extends React.Component<INewComerUpdateProps, INewCo
                   <AvField id="new-comer-occupation" type="text" name="occupation" />
                 </AvGroup>
                 <AvGroup>
-                  <Label id="kFirstNameLabel" for="new-comer-kFirstName">
+                  {/* <TextBoxComponent placeholder="First Name" floatLabelType="Auto" /> */}
+                  {/* <Label id="kFirstNameLabel" for="new-comer-kFirstName">
                     <Translate contentKey="newcomerApp.newComer.kFirstName">K First Name</Translate>
                   </Label>
-                  <AvField id="new-comer-kFirstName" type="text" name="kFirstName" />
+                  <AvField id="new-comer-kFirstName" type="text" name="kFirstName" /> */}
                 </AvGroup>
                 <AvGroup>
                   <Label id="kLastNameLabel" for="new-comer-kLastName">
