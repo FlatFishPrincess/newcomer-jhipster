@@ -1,0 +1,16 @@
+{
+  "newcomerApp": {
+    "MemberLevel": {
+      "null": "",
+      "None": "None",
+      "GeneralServant": "GeneralServant",
+      "Deacon": "Deacon",
+      "OrdainedDecacon": "OrdainedDecacon",
+      "Elder": "Elder",
+      "InternPastor": "InternPastor",
+      "Missionary": "Missionary",
+      "Paster": "Paster",
+      "PasterWife": "PasterWife"
+    }
+  }
+}

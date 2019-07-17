@@ -1,0 +1,88 @@
+entity NewComer {
+  visaStatus VisaStatus,
+  company String,
+  memberLevel MemberLevel,
+  mobilePhone String,
+  familyRelation String,
+  parentId String,
+  occupation String,
+  kFirstName String,
+  kLastName String,
+  eFirstName String,
+  eLastName String,
+  previousChurch String,
+  carNumber1 String,
+  email String,
+  province String,
+  postalCode String,
+  country String,
+  serviceExp String,
+  street1 String,
+  gender String,
+  dateOfBirth LocalDate,
+  photoUrl String,
+  acquaintance String,
+  homePhone String,
+  street2 String,
+  carNumber2 String,
+  baptismType BaptismType,
+  baptismChurh String,
+  baptismYear Integer,
+  registrationDate LocalDate,
+  isDelete Boolean,
+  isSubmit Boolean,
+  personId String,
+  isMember String,
+  note String
+}
+
+entity City {
+  name String,
+  code String
+}
+
+enum VisaStatus {
+  None,
+  PermenantResident,
+  Citizen,
+  Visitor,
+  StudyPermit,
+  WorkPermit,
+  WorkingHoliday
+}
+enum MemberLevel {
+  None,
+  GeneralServant,
+  Deacon,
+  OrdainedDecacon,
+  Elder,
+  InternPastor,
+  Missionary,
+  Paster,
+  PasterWife
+}
+enum BaptismType {
+  None,
+  InfantBaptism,
+  Baptism,
+  Confirmation
+}
+
+relationship OneToMany {
+	City{Newcomer} to NewComer{city(name)}
+}
+
+//relationship ManyToOne {
+//	NewComer{city(name)} to City{newcomer}
+//}
+
+// Set pagination options
+paginate NewComer with pagination
+// Set service options to all except few
+// service all with serviceImpl except NewComer
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+{
+  "newcomerApp": {
+    "VisaStatus": {
+      "null": "",
+      "None": "None",
+      "PermenantResident": "PermenantResident",
+      "Citizen": "Citizen",
+      "Visitor": "Visitor",
+      "StudyPermit": "StudyPermit",
+      "WorkPermit": "WorkPermit",
+      "WorkingHoliday": "WorkingHoliday"
+    }
+  }
+}

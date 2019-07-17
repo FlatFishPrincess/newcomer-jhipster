@@ -1,0 +1,166 @@
+{
+    "name": "NewComer",
+    "fields": [
+        {
+            "fieldName": "visaStatus",
+            "fieldType": "VisaStatus",
+            "fieldValues": "None,PermenantResident,Citizen,Visitor,StudyPermit,WorkPermit,WorkingHoliday"
+        },
+        {
+            "fieldName": "company",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "memberLevel",
+            "fieldType": "MemberLevel",
+            "fieldValues": "None,GeneralServant,Deacon,OrdainedDecacon,Elder,InternPastor,Missionary,Paster,PasterWife"
+        },
+        {
+            "fieldName": "mobilePhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "familyRelation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "parentId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "occupation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "kFirstName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "kLastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "eFirstName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "eLastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "previousChurch",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "carNumber1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "province",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "postalCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "country",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "serviceExp",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "street1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gender",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateOfBirth",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "photoUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "acquaintance",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "homePhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "street2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "carNumber2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "baptismType",
+            "fieldType": "BaptismType",
+            "fieldValues": "None,InfantBaptism,Baptism,Confirmation"
+        },
+        {
+            "fieldName": "baptismChurh",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "baptismYear",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "registrationDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "isDelete",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isSubmit",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "personId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isMember",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "note",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "city",
+            "otherEntityRelationshipName": "newcomer",
+            "relationshipName": "city",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20190717035036",
+    "entityTableName": "new_comer",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

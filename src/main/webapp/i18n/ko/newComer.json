@@ -1,0 +1,57 @@
+{
+  "newcomerApp": {
+    "newComer": {
+      "home": {
+        "title": "New Comers",
+        "createLabel": "Create a new New Comer",
+        "createOrEditLabel": "Create or edit a New Comer",
+        "notFound": "No New Comer found"
+      },
+      "created": "A new New Comer is created with identifier {{ param }}",
+      "updated": "A New Comer is updated with identifier {{ param }}",
+      "deleted": "A New Comer is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete New Comer {{ id }}?"
+      },
+      "detail": {
+        "title": "New Comer"
+      },
+      "visaStatus": "Visa Status",
+      "company": "Company",
+      "memberLevel": "Member Level",
+      "mobilePhone": "Mobile Phone",
+      "familyRelation": "Family Relation",
+      "parentId": "Parent Id",
+      "occupation": "Occupation",
+      "kFirstName": "K First Name",
+      "kLastName": "K Last Name",
+      "eFirstName": "E First Name",
+      "eLastName": "E Last Name",
+      "previousChurch": "Previous Church",
+      "carNumber1": "Car Number 1",
+      "email": "Email",
+      "province": "Province",
+      "postalCode": "Postal Code",
+      "country": "Country",
+      "serviceExp": "Service Exp",
+      "street1": "Street 1",
+      "gender": "Gender",
+      "dateOfBirth": "Date Of Birth",
+      "photoUrl": "Photo Url",
+      "acquaintance": "Acquaintance",
+      "homePhone": "Home Phone",
+      "street2": "Street 2",
+      "carNumber2": "Car Number 2",
+      "baptismType": "Baptism Type",
+      "baptismChurh": "Baptism Churh",
+      "baptismYear": "Baptism Year",
+      "registrationDate": "Registration Date",
+      "isDelete": "Is Delete",
+      "isSubmit": "Is Submit",
+      "personId": "Person Id",
+      "isMember": "Is Member",
+      "note": "Note",
+      "city": "City"
+    }
+  }
+}
