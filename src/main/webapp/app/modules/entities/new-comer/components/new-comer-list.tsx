@@ -1,17 +1,18 @@
+// tslint:disable-next-line:no-unused-variable
+import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
+import { INewComer } from 'app/shared/model/new-comer.model';
+import { IRootState } from 'app/shared/reducers';
+import { ITEMS_PER_PAGE } from 'app/shared/util/pagination.constants';
 import React from 'react';
+// tslint:disable-next-line:no-unused-variable
+import { getSortState, ICrudGetAllAction, IPaginationBaseState, JhiItemCount, JhiPagination, TextFormat, Translate } from 'react-jhipster';
 import { connect } from 'react-redux';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { Button, Col, Row, Table } from 'reactstrap';
-// tslint:disable-next-line:no-unused-variable
-import { Translate, ICrudGetAllAction, TextFormat, getSortState, IPaginationBaseState, JhiPagination, JhiItemCount } from 'react-jhipster';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { IRootState } from 'app/shared/reducers';
-import { getEntities } from './new-comer.reducer';
-import { INewComer } from 'app/shared/model/new-comer.model';
-// tslint:disable-next-line:no-unused-variable
-import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
-import { ITEMS_PER_PAGE } from 'app/shared/util/pagination.constants';
+import { getEntities } from '../new-comer.reducer';
 
 export interface INewComerProps extends StateProps, DispatchProps, RouteComponentProps<{ url: string }> {}
 

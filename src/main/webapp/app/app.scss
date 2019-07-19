@@ -1,6 +1,9 @@
 // Override Boostrap variables
 // Import Bootstrap source files from node_modules
 @import 'node_modules/bootstrap/scss/bootstrap';
+// // override syncfusion
+// @import "node_modules/@syncfusion/ej2-base/styles/material.css";
+// @import "node_modules/@syncfusion/ej2-react-inputs/styles/material.css";
 body {
   background: #fafafa;
   margin: 0;
