@@ -9,6 +9,7 @@ import { Link, RouteComponentProps } from 'react-router-dom';
 import { Button, Col, Label, Row } from 'reactstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { EmitType } from '@syncfusion/ej2-base';
 import { InputEventArgs, TextBoxComponent } from '@syncfusion/ej2-react-inputs';
 
 export interface INewComerFormOwnProps {
@@ -23,17 +24,12 @@ export class NewcomerForm extends React.Component<INewComerFormOwnProps, INewCom
   // ref: React.RefObject<HTMLElement> = React.createRef();
   constructor(props) {
     super(props);
-    this.state = {
-      newcomer: undefined
-    };
+    this.state = {};
   }
 
   handleOnInput = (e: InputEventArgs) => {
-    const { value } = e;
-    const { name }: any = e.event.target; // somehow e.target.name is not assignable
-    // tslint:disable-next-line: no-console
-    console.log(name);
-    // this.setState({ newcomer: { name: value}});
+    const { name, value } = e.event.target as HTMLInputElement; // somehow e.target.name is not assignable
+    this.setState({ newcomer: { [name]: value } });
   };
 
   render() {
@@ -46,16 +42,16 @@ export class NewcomerForm extends React.Component<INewComerFormOwnProps, INewCom
           <Col xs={7} sm={3} md={2}>
             <TextBoxComponent placeholder="K First name" floatLabelType="Auto" name="kLastName" />
           </Col>
-          <Col xs={12} sm={3} md={2}>
+          <Col xs={7} sm={3} md={2}>
             <TextBoxComponent placeholder="E First name" floatLabelType="Auto" name="eFirstName" />
           </Col>
-          <Col xs={6} sm={3} md={2}>
+          <Col xs={5} sm={3} md={2}>
             <TextBoxComponent placeholder="E Last name" floatLabelType="Auto" name="eLastName" />
           </Col>
         </Row>
         <Row>
           <Col xs={5} sm={3} md={2}>
-            <TextBoxComponent placeholder="K Last name" floatLabelType="Auto" name="kFirstName" />
+            {/* <DatePickerComponent value={this.dateValue}></DatePickerComponent> */}
           </Col>
           <Col xs={7} sm={3} md={2}>
             <TextBoxComponent placeholder="K First name" floatLabelType="Auto" name="kLastName" />
