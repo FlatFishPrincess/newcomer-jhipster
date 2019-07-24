@@ -1,7 +1,9 @@
-import { INewComer } from 'app/shared/model/new-comer.model';
+import newComer from 'app/entities/new-comer/new-comer';
+import { INewComer, VisaStatus } from 'app/shared/model/new-comer.model';
 import { convertDateTimeFromServer, convertDateTimeToServer } from 'app/shared/util/date-utils';
 import { mapIdList } from 'app/shared/util/entity-utils';
 import { AvFeedback, AvField, AvForm, AvGroup, AvInput } from 'availity-reactstrap-validation';
+import moment from 'moment';
 import React from 'react';
 import { ICrudGetAction, ICrudGetAllAction, ICrudPutAction, Translate, translate } from 'react-jhipster';
 import { connect } from 'react-redux';
@@ -10,29 +12,62 @@ import { Button, Col, Label, Row } from 'reactstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { EmitType } from '@syncfusion/ej2-base';
-import { InputEventArgs, TextBoxComponent } from '@syncfusion/ej2-react-inputs';
+import { RadioButtonComponent } from '@syncfusion/ej2-react-buttons';
+import { ChangedEventArgs, DatePickerComponent } from '@syncfusion/ej2-react-calendars';
+import { ChangeEventArgs, DropDownListComponent, SelectEventArgs } from '@syncfusion/ej2-react-dropdowns';
+import { InputEventArgs, MaskedTextBoxComponent, TextBoxComponent } from '@syncfusion/ej2-react-inputs';
 
 export interface INewComerFormOwnProps {
   newcomer?: INewComer;
 }
 
-export interface INewComerFormState {
+export interface IState {
   newcomer?: INewComer;
+  selectedDate?: Date;
 }
 
-export class NewcomerForm extends React.Component<INewComerFormOwnProps, INewComerFormState> {
-  // ref: React.RefObject<HTMLElement> = React.createRef();
+export class NewcomerForm extends React.Component<INewComerFormOwnProps, IState> {
+  private visaStatusList: VisaStatus[] = Object.values(VisaStatus);
   constructor(props) {
     super(props);
     this.state = {};
   }
 
+  componentDidUpdate(prevProps: INewComerFormOwnProps, prevState: IState) {
+    // tslint:disable-next-line: no-console
+    if (prevState !== this.state) {
+      console.log(prevState);
+    }
+  }
+
   handleOnInput = (e: InputEventArgs) => {
     const { name, value } = e.event.target as HTMLInputElement; // somehow e.target.name is not assignable
-    this.setState({ newcomer: { [name]: value } });
+    const { newcomer } = this.state;
+    this.setState({ newcomer: { ...newcomer, [name]: value } });
   };
 
+  handleOnSelct = (e: ChangeEventArgs) => {
+    // tslint:disable-next-line: no-console
+    console.log(e);
+  };
+
+  selectTest = (e: SelectEventArgs) => {
+    // tslint:disable-next-line: no-console
+    console.log(e);
+  };
+
+  handleOnDate = (e: ChangedEventArgs) => {
+    const { name } = e.element as HTMLInputElement;
+    const { value } = e;
+    const { newcomer } = this.state;
+    const convertedValue = this.handleConvertDateToMoment(value);
+    this.setState({ newcomer: { ...newcomer, [name]: convertedValue }, selectedDate: value });
+  };
+
+  handleConvertDateToMoment = (date: Date) => moment(date);
+
   render() {
+    const { newcomer, selectedDate } = this.state;
     return (
       <div>
         <Row>
@@ -40,27 +75,34 @@ export class NewcomerForm extends React.Component<INewComerFormOwnProps, INewCom
             <TextBoxComponent placeholder="K Last name" floatLabelType="Auto" name="kFirstName" input={this.handleOnInput} />
           </Col>
           <Col xs={7} sm={3} md={2}>
-            <TextBoxComponent placeholder="K First name" floatLabelType="Auto" name="kLastName" />
-          </Col>
-          <Col xs={7} sm={3} md={2}>
-            <TextBoxComponent placeholder="E First name" floatLabelType="Auto" name="eFirstName" />
+            <TextBoxComponent placeholder="K First name" floatLabelType="Auto" name="kLastName" input={this.handleOnInput} />
           </Col>
           <Col xs={5} sm={3} md={2}>
-            <TextBoxComponent placeholder="E Last name" floatLabelType="Auto" name="eLastName" />
+            <TextBoxComponent placeholder="E Last name" floatLabelType="Auto" name="eLastName" input={this.handleOnInput} />
+          </Col>
+          <Col xs={7} sm={3} md={2}>
+            <TextBoxComponent placeholder="E First name" floatLabelType="Auto" name="eFirstName" input={this.handleOnInput} />
           </Col>
         </Row>
         <Row>
-          <Col xs={5} sm={3} md={2}>
-            {/* <DatePickerComponent value={this.dateValue}></DatePickerComponent> */}
-          </Col>
-          <Col xs={7} sm={3} md={2}>
-            <TextBoxComponent placeholder="K First name" floatLabelType="Auto" name="kLastName" />
+          <Col xs={12} sm={3} md={2}>
+            <DatePickerComponent name="dateOfBirth" change={this.handleOnDate} value={selectedDate} />
           </Col>
           <Col xs={12} sm={3} md={2}>
-            <TextBoxComponent placeholder="E First name" floatLabelType="Auto" name="eFirstName" />
+            <RadioButtonComponent label="Male" name="gender" change={this.handleOnInput} value="m" />
+            <RadioButtonComponent label="Female" name="gender" change={this.handleOnInput} value="f" />
           </Col>
-          <Col xs={6} sm={3} md={2}>
-            <TextBoxComponent placeholder="E Last name" floatLabelType="Auto" name="eLastName" />
+          <Col xs={12} sm={3} md={2}>
+            <MaskedTextBoxComponent mask="000-000-0000" name="mobilePhone" />
+          </Col>
+          <Col xs={12} sm={3} md={2}>
+            <DropDownListComponent
+              name="visaStatus"
+              dataSource={this.visaStatusList}
+              select={this.selectTest}
+              change={this.handleOnSelct}
+              placeholder="Select a visa status"
+            />
           </Col>
         </Row>
       </div>

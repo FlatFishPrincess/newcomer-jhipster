@@ -1,7 +1,7 @@
-import { Moment } from 'moment';
 import { ICity } from 'app/shared/model/city.model';
+import { Moment } from 'moment';
 
-export const enum VisaStatus {
+export enum VisaStatus {
   None = 'None',
   PermenantResident = 'PermenantResident',
   Citizen = 'Citizen',
